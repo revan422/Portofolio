@@ -13,16 +13,15 @@ import { Java } from "@/components/ui/svgs/java";
 import { Csharp } from "@/components/ui/svgs/csharp";
 
 export const DATA = {
-  name: "Dillion Verma",
-  initials: "DV",
+  name: "Revan",
   url: "https://dillion.io",
   location: "San Francisco, CA",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description:
-    "Software Engineer turned Entrepreneur. I love building things and helping people. Very active on Twitter.",
+    "Sebagai mahasiswa Teknologi Informasi yang sangat termotivasi dan berspesialisasi dalam Pengembangan Jaringan,Saya telah memperoleh pengalaman langsung dalam membangun sistem jaringan, termasuk sistem Internet of Things. Pengalaman ini telah memperkuat kemampuan pemecahan masalah, pengembangan sistem, kerja tim, dan berpikir analitisnya.",
   summary:
-    "At the end of 2022, I quit my job as a software engineer to go fulltime into building and scaling my own SaaS businesses. In the past, [I pursued a double degree in computer science and business](/#education), [interned at big tech companies in Silicon Valley](https://www.youtube.com/watch?v=d-LJ2e5qKdE), and [competed in over 21 hackathons for fun](/#hackathons). I also had the pleasure of being a part of the first ever in-person cohort of buildspace called [buildspace sf1](https://buildspace.so/sf1).",
-  avatarUrl: "/me.png",
+    "Pada tahun 2023, saya  adalah tipe orang yang selalu tertarik dengan dunia kreatif dan digital. saya punya rasa penasaran besar terhadap bagaimana media sosial dan desain bisa mempengaruhi cara orang berinteraksi dengan brand. Ketertarikan itu membawa saya untuk mendalami social media, desain, fotografi, hingga analisis data, Hingga saat ini..",
+  avatarUrl: "/my.png",
   skills: [
     { name: "React", icon: ReactLight },
     { name: "Next.js", icon: NextjsIconDark },
@@ -83,7 +82,7 @@ export const DATA = {
 
   work: [
     {
-      company: "Atomic Finance",
+      company: "SMK TI Bazma",
       href: "https://atomic.finance",
       badges: [],
       location: "Remote",
@@ -157,41 +156,33 @@ export const DATA = {
   ],
   education: [
     {
-      school: "Buildspace",
-      href: "https://buildspace.so",
-      degree: "s3, s4, sf1, s5",
-      logoUrl: "/buildspace.jpg",
+      school: "SMK TI Bazma",
+      href: "https://smktibazma.sch.id",
+      degree: "Sistem Informasi & Jaringan",
+      logoUrl: "/Bazma.png",
       start: "2023",
-      end: "2024",
+      end: "2027",
     },
     {
-      school: "University of Waterloo",
-      href: "https://uwaterloo.ca",
-      degree: "Bachelor's Degree of Computer Science (BCS)",
-      logoUrl: "/waterloo.png",
-      start: "2016",
+      school: "MTS Nurul Huda Beringin",
+      href: "https://www.facebook.com/people/MTs-Nurul-Huda-Beringin/pfbid0tDwfqLu47pCFfwwhZS55eSGjZ9PwrqeFyeFX3RYmXgjCBSz2oCs4jc9t6YraKjvDl/?locale=id_ID",
+      degree: "pendidikan formal berbasis pesantren",
+      logoUrl: "/Mts.png",
+      start: "2021",
+      end: "2023",
+    },
+    {
+      school: "MTS Nurul Huda Munjul",
+      href: "https://nurulhudamunjul.ponpes.id/mts/",
+      degree: "pendidikan agama Islam dan umum",
+      logoUrl: "/Mts1.png",
+      start: "2020",
       end: "2021",
-    },
-    {
-      school: "Wilfrid Laurier University",
-      href: "https://wlu.ca",
-      degree: "Bachelor's Degree of Business Administration (BBA)",
-      logoUrl: "/laurier.png",
-      start: "2016",
-      end: "2021",
-    },
-    {
-      school: "International Baccalaureate",
-      href: "https://ibo.org",
-      degree: "IB Diploma",
-      logoUrl: "/ib.png",
-      start: "2012",
-      end: "2016",
     },
   ],
   projects: [
     {
-      title: "Chat Collect",
+      title: "Jaringan",
       href: "https://chatcollect.com",
       dates: "Jan 2024 - Feb 2024",
       active: true,
