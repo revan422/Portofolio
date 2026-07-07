@@ -163,22 +163,6 @@ export const DATA = {
       start: "2023",
       end: "2027",
     },
-    {
-      school: "MTS Nurul Huda Beringin",
-      href: "https://www.facebook.com/people/MTs-Nurul-Huda-Beringin/pfbid0tDwfqLu47pCFfwwhZS55eSGjZ9PwrqeFyeFX3RYmXgjCBSz2oCs4jc9t6YraKjvDl/?locale=id_ID",
-      degree: "pendidikan formal berbasis pesantren",
-      logoUrl: "/Mts.png",
-      start: "2021",
-      end: "2023",
-    },
-    {
-      school: "MTS Nurul Huda Munjul",
-      href: "https://nurulhudamunjul.ponpes.id/mts/",
-      degree: "pendidikan agama Islam dan umum",
-      logoUrl: "/Mts1.png",
-      start: "2020",
-      end: "2021",
-    },
   ],
   projects: [
     {
