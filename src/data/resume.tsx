@@ -110,14 +110,14 @@ export const DATA = {
     },
   ],
   projects: [
-    {
+     {
       title: "SIOT",
       href: "https://drive.google.com/drive/u/0/folders/14DnNZk9UmGkxUWl7YYEHxWl5R9cW40Vy",
       dates: "2026",
       active: true,
       description:
         "I have completed an IoT dashboard project based on Laravel and ESP32. In this project, I successfully integrated a DHT22 sensor, an I2C LCD, and a servo motor, utilizing MQTT communication via the Shiftr.io broker. The resulting dashboard is capable of displaying real-time temperature and humidity data, sending messages to the LCD, and controlling the servo via a web interface. During development, I tested the system and resolved several issues to ensure smooth operation; one specific challenge involved the dashboard page repeatedly disconnecting from Wokwi, which I ultimately resolved by thoroughly investigating the root cause of the problem.",
-      technologies: [
+      tags: [ // <--- UBAH "technologies" MENJADI "tags" DI SINI
         "Laravel",
         "PHPMyAdmin",
         "Wokwi",
@@ -125,7 +125,6 @@ export const DATA = {
         "JavaScript",
       ],
       image: "5.png",
-
     },
     {
       title: "Finance & Operations - IWI (Enterpreneurship & Creativity School) ",
