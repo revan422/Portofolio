@@ -57,7 +57,7 @@ export function ProjectCard({
   return (
     <div
       className={cn(
-        "flex flex-col h-full border border-border rounded-xl overflow-hidden hover:ring-2 cursor-pointer hover:ring-muted transition-all duration-200",
+        "flex flex-col h-full rounded-xl overflow-hidden cursor-pointer anime-glowing-card transition-all duration-300",
         className
       )}
     >
@@ -125,16 +125,29 @@ export function ProjectCard({
           <Markdown>{description}</Markdown>
         </div>
         {tags && tags.length > 0 && (
-          <div className="flex flex-wrap gap-1 mt-auto">
-            {tags.map((tag) => (
-              <Badge
-                key={tag}
-                className="text-[11px] font-medium border border-border h-6 w-fit px-2"
-                variant="outline"
-              >
-                {tag}
-              </Badge>
-            ))}
+          <div className="flex flex-wrap gap-1.5 mt-2">
+            {tags?.map((tag, index) => {
+              const bgColors = [
+                "bg-red-500/10 text-red-500 border-red-500/20 dark:bg-red-500/20 dark:text-red-300",
+                "bg-amber-500/10 text-amber-600 border-amber-500/20 dark:bg-amber-500/20 dark:text-amber-300",
+                "bg-blue-500/10 text-blue-500 border-blue-500/20 dark:bg-blue-500/20 dark:text-blue-300",
+                "bg-emerald-500/10 text-emerald-600 border-emerald-500/20 dark:bg-emerald-500/20 dark:text-emerald-300",
+                "bg-purple-500/10 text-purple-500 border-purple-500/20 dark:bg-purple-500/20 dark:text-purple-300",
+                "bg-pink-500/10 text-pink-500 border-pink-500/20 dark:bg-pink-500/20 dark:text-pink-300",
+              ];
+              const colorClass = bgColors[index % bgColors.length];
+              return (
+                <span
+                  key={index}
+                  className={cn(
+                    "px-2 py-0.5 text-[11px] font-semibold rounded-md border tracking-wide",
+                    colorClass
+                  )}
+                >
+                  {tag}
+                </span>
+              );
+            })}
           </div>
         )}
       </div>

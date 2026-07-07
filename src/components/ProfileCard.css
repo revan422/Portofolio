@@ -1,0 +1,383 @@
+:root {
+  --pointer-x: 50%;
+  --pointer-y: 50%;
+  --pointer-from-center: 0;
+  --pointer-from-top: 0.5;
+  --pointer-from-left: 0.5;
+  --card-opacity: 0;
+  --rotate-x: 0deg;
+  --rotate-y: 0deg;
+  --background-x: 50%;
+  --background-y: 50%;
+  --grain: none;
+  --icon: none;
+  --behind-gradient: none;
+  --behind-glow-color: rgba(0, 0, 0, 0.1);
+  --behind-glow-size: 20%;
+  --inner-gradient: none;
+  --card-radius: 40px;
+}
+
+.pc-card-wrapper {
+  perspective: 600px;
+  transform: translate3d(0, 0, 0.1px);
+  position: relative;
+  touch-action: none;
+}
+
+.pc-behind {
+  display: none;
+}
+
+.pc-card-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.pc-card {
+  height: 80svh;
+  max-height: 560px;
+  display: grid;
+  aspect-ratio: 0.72;
+  border-radius: var(--card-radius);
+  position: relative;
+  border: 6px solid #000000;
+  box-shadow: 10px 10px 0px #000000;
+  background: #ffffff; 
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateZ(0) rotateX(0deg) rotateY(0deg);
+  backface-visibility: hidden;
+  overflow: hidden; /* Clips the inner details */
+}
+
+.pc-card:hover,
+.pc-card.active {
+  transition: none;
+  transform: translateZ(0) rotateX(var(--rotate-y)) rotateY(var(--rotate-x));
+}
+
+.pc-card-shell.entering .pc-card {
+  transition: transform 180ms ease-out;
+}
+
+.pc-card * {
+  display: grid;
+  grid-area: 1/-1;
+  pointer-events: none;
+}
+
+.pc-inside {
+  inset: 0;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: calc(var(--card-radius) - 6px);
+  overflow: hidden;
+  transform: none;
+}
+
+.pc-shine {
+  display: none;
+}
+
+.pc-glare {
+  transform: translate3d(0, 0, 1.1px);
+  overflow: hidden;
+  background-image: radial-gradient(
+    farthest-corner circle at var(--pointer-x) var(--pointer-y),
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  mix-blend-mode: overlay;
+  z-index: 4;
+}
+
+.pc-avatar-content {
+  mix-blend-mode: normal;
+  overflow: visible;
+  transform: translateZ(2px);
+  z-index: 2;
+  height: 100%;
+  border-radius: calc(var(--card-radius) - 6px);
+}
+
+/* ★ SISWA SIJA ★ Top Badge - Enlarged & Positioned on the shell wrapper */
+.sija-top-badge {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%) translateZ(10px);
+  background-color: #FFEB3B; /* Bright yellow */
+  color: #000000;
+  border: 4px solid #000000;
+  border-radius: 12px;
+  padding: 8px 24px;
+  font-family: var(--font-sans), sans-serif !important;
+  font-size: 15px;
+  font-weight: 900 !important;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  box-shadow: 4px 4px 0px #000000;
+  z-index: 20; /* Fully overlay the top border */
+}
+
+/* Sija Card Inner layout */
+.sija-card-inner {
+  padding: 2.2rem 1.4rem 1.4rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+}
+
+.sija-img-container {
+  width: 92%;
+  height: 52%;
+  border: 4px solid #000000;
+  border-radius: 24px;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1.2rem;
+}
+
+/* Glare mirror shine sweep effect */
+.sija-img-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 70%
+  );
+  transition: left 0.7s ease;
+  z-index: 5;
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+
+.pc-card:hover .sija-img-container::after {
+  left: 150%;
+}
+
+.sija-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Dashed divider line from reference image */
+.sija-divider {
+  width: 90%;
+  height: 1px;
+  border-top: 2.5px dashed #e2e8f0;
+  margin: 0.4rem 0 1.2rem 0;
+}
+
+.sija-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+}
+
+.sija-name {
+  font-family: var(--font-sans), sans-serif !important;
+  font-size: 20px;
+  color: #1a1a1a;
+  font-weight: 750 !important;
+  letter-spacing: -0.01em;
+}
+
+.sija-title {
+  font-family: var(--font-sans), sans-serif !important;
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em;
+}
+
+/* GitHub Overlay Badge Style */
+.sija-overlay-github-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(90deg, #F27121 0%, #E94057 50%, #8A2387 100%);
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  padding: 4px 10px;
+  color: #ffffff;
+  font-family: var(--font-sans), sans-serif !important;
+  font-size: 11px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  text-decoration: none;
+}
+
+/* Left Overlaid Stickers */
+.sija-overlay-stickers {
+  position: absolute;
+  left: 12px;
+  top: 32%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+}
+
+.sija-sticker {
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 0px #000000;
+  padding: 4px;
+}
+
+.sija-sticker img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Contact button details overlay at bottom (if showUserInfo = true) */
+.pc-user-info {
+  position: absolute;
+  --ui-inset: 12px;
+  bottom: var(--ui-inset);
+  left: var(--ui-inset);
+  right: var(--ui-inset);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 3px solid #000000;
+  border-radius: 12px;
+  padding: 6px 10px;
+  pointer-events: auto;
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.pc-user-details {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pc-mini-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1.5px solid #000000;
+  flex-shrink: 0;
+}
+
+.pc-mini-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pc-user-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.pc-handle {
+  font-size: 11px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.1;
+}
+
+.pc-status {
+  font-size: 9px;
+  color: #22c55e;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.pc-contact-btn {
+  background: #000000;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pc-contact-btn:hover {
+  background: #333333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pc-card {
+    height: 72svh;
+    max-height: 480px;
+    border-width: 5px;
+    box-shadow: 8px 8px 0px #000000;
+  }
+
+  .sija-top-badge {
+    font-size: 13px;
+    padding: 6px 18px;
+    top: -20px;
+    border-width: 3px;
+  }
+
+  .sija-name {
+    font-size: 17px;
+  }
+
+  .sija-title {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pc-card {
+    height: 62svh;
+    max-height: 410px;
+    border-width: 4px;
+    box-shadow: 6px 6px 0px #000000;
+  }
+
+  .sija-top-badge {
+    font-size: 11px;
+    padding: 5px 14px;
+    top: -16px;
+    border-width: 2.5px;
+  }
+
+  .sija-name {
+    font-size: 15px;
+  }
+
+  .sija-title {
+    font-size: 10px;
+  }
+}
