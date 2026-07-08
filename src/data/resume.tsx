@@ -133,7 +133,7 @@ export const DATA = {
       active: true,
       description:
         "Managed cash flow records, calculated raw material costs, and prepared revenue estimates for sales activities at more than 3 major school events. Contributed to simple financial management for the sale of more than 100 homemade food products, including basic profit and loss calculations, capital management, and sales result evaluation. Gained hands-on experience in basic financial management, cost control, profit analysis, teamwork, and entrepreneurship.",
-      image: "IWI.PNG",
+      image: "IWI.png",
     },
     {
       title: "Member of The Security  Division - STUDENT COUNCIL OF  SMK TI BAZMA.",
